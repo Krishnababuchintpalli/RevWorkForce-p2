@@ -5,21 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3961de15-b83e-4656-af40-0c3f284bb49f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/RevWorkForceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/RevWorkForceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/auth/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/auth/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/auth/dto/LoginRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/auth/dto/LoginRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/auth/dto/LoginResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/auth/dto/LoginResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/auth/dto/RegisterRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/auth/dto/RegisterRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/auth/entity/RoleEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/auth/entity/RoleEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/auth/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/auth/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/auth/repository/RoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/auth/repository/RoleRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/auth/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/auth/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/auth/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/auth/service/AuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/auth/service/AuthServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/auth/service/AuthServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/auth/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/revworkforce/auth/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/auth/dto/LoginRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/revworkforce/auth/dto/LoginRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/auth/dto/LoginResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/revworkforce/auth/dto/LoginResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/auth/dto/RegisterRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/revworkforce/auth/dto/RegisterRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/auth/entity/RoleEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/revworkforce/auth/entity/RoleEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/auth/entity/RoleName.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/revworkforce/auth/entity/RoleName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/auth/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/revworkforce/auth/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/auth/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/revworkforce/auth/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/auth/repository/RoleRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/auth/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/revworkforce/auth/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/auth/security/CustomUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/revworkforce/auth/security/CustomUserDetailsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/auth/security/JwtFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/revworkforce/auth/security/JwtFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/auth/security/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/revworkforce/auth/security/JwtUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/auth/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/revworkforce/auth/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/auth/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/revworkforce/auth/service/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/auth/service/AuthServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/revworkforce/auth/service/AuthServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +72,8 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.RevWorkForceApplication.executor": "Run",
-    "git-widget-placeholder": "master",
+    "Spring Boot.RevWorkforceApplication.executor": "Run",
+    "git-widget-placeholder": "feature/authentication",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/91934/Desktop/revaturetraining/RevWorkForce-p2",
     "nodejs_package_manager_path": "npm",
@@ -75,6 +85,15 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="RevWorkforceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="revWorkForce" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.revworkforce.RevWorkforceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
