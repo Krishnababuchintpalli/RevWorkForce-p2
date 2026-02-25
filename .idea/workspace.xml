@@ -6,6 +6,85 @@
   <component name="ChangeListManager">
     <list default="true" id="a75fec46-1077-4e35-9bc0-c798ce2cb01f" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/../../calculator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/RevWorkForceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/admin/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/auth/controller/AuthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/auth/dto/LoginRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/auth/dto/LoginResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/auth/dto/RegisterRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/auth/entity/PasswordResetToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/auth/repository/PasswordResetTokenRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/auth/security/CustomUserDetailsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/auth/security/JwtFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/auth/security/JwtUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/auth/service/AuthService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/auth/service/AuthServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/config/AppConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/employee/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/entity/Department.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/entity/Designation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/entity/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/entity/RoleEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/entity/RoleName.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/leave/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/notification/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/performance/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/report/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/repository/DepartmentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/repository/DesignationRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/repository/EmployeeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/repository/RoleRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/RevWorkForce/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/revworkforce/auth/security/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/.vscode/extensions.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/.vscode/launch.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/.vscode/tasks.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/angular.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/src/app/app-routing.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/src/app/app.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/src/app/app.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/src/app/app.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/src/app/app.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/src/app/app.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/src/app/core/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/src/app/features/admin/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/src/app/features/auth/auth-routing.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/src/app/features/auth/auth.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/src/app/features/auth/auth.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/src/app/features/auth/auth.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/src/app/features/auth/auth.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/src/app/features/auth/auth.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/src/app/features/dashboard/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/src/app/features/employee/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/src/app/features/leave/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/src/app/features/notification/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/src/app/features/performance/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/src/app/features/report/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/src/app/shared/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/src/assets/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/src/environments/environment.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/src/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/src/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/src/main.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/src/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/tsconfig.app.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/tsconfig.spec.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../log-analyzer.sh" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../my-project" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../sample-log.txt" afterDir="false" />
@@ -14,6 +93,45 @@
       <change afterPath="$PROJECT_DIR$/../../springboot/RevWorkForce-Springboot/src/main/java/com/revworkforce/controller/EmployeeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../angular.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/RevWorkforceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/RevWorkforceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/entity/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/entity/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/repository/DepartmentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/repository/DepartmentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/repository/DesignationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/repository/DesignationRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/repository/EmployeeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/repository/EmployeeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/repository/RoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/repository/RoleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/.vscode/extensions.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.vscode/extensions.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/.vscode/launch.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.vscode/launch.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/.vscode/tasks.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.vscode/tasks.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/features/auth/auth-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/features/auth/auth-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/features/auth/auth.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/features/auth/auth.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/features/auth/auth.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/features/auth/auth.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/features/auth/auth.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/features/auth/auth.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/features/auth/auth.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/features/auth/auth.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/tsconfig.app.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/tsconfig.app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/tsconfig.spec.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/tsconfig.spec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../package-lock.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../package.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../tsconfig.app.json" beforeDir="false" />
@@ -56,11 +174,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.RevWorkforceApplication.executor": "Run",
-<<<<<<< HEAD
-    "git-widget-placeholder": "feature/foundation-setup",
-=======
-    "git-widget-placeholder": "feature/admin-modules",
->>>>>>> feature/admin-modules
+    "git-widget-placeholder": "Merging feature/admin-modules",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/New folder (3)/java/revworkforce/backend/src/main/java/com/revworkforce/report",
     "onboarding.tips.debug.path": "D:/New folder (3)/java/revWorkForce/src/main/java/com/demo/Main.java",
