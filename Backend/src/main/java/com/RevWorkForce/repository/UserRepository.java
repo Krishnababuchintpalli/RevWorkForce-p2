@@ -1,4 +1,4 @@
-package com.revworkforce.auth.repository;
+package com.revworkforce.repository;
 
 import com.revworkforce.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;

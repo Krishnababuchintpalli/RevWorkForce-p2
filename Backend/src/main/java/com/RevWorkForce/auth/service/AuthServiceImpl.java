@@ -8,8 +8,7 @@ import com.revworkforce.auth.repository.PasswordResetTokenRepository;
 import com.revworkforce.entity.RoleEntity;
 import com.revworkforce.entity.RoleName;
 import com.revworkforce.entity.User;
-import com.revworkforce.auth.repository.RoleRepository;
-import com.revworkforce.auth.repository.UserRepository;
+
 import com.revworkforce.auth.security.CustomUserDetailsService;
 import com.revworkforce.auth.security.JwtUtil;
 
@@ -26,21 +25,21 @@ import java.util.UUID;
 @Service
 public class AuthServiceImpl implements AuthService {
 
-    private final UserRepository userRepository;
-    private final RoleRepository roleRepository;
+    private final com.revworkforce.repository.UserRepository userRepository;
+    private final com.revworkforce.repository.RoleRepository roleRepository;
     private final PasswordEncoder passwordEncoder;
     private final AuthenticationManager authenticationManager;
     private final JwtUtil jwtUtil;
     private final CustomUserDetailsService userDetailsService;
     private final PasswordResetTokenRepository tokenRepository;
 
-    public AuthServiceImpl(UserRepository userRepository,
-                           RoleRepository roleRepository,
+    public AuthServiceImpl(com.revworkforce.repository.UserRepository userRepository,
+                           com.revworkforce.repository.RoleRepository roleRepository,
                            PasswordEncoder passwordEncoder,
                            AuthenticationManager authenticationManager,
                            JwtUtil jwtUtil,
                            CustomUserDetailsService userDetailsService
-                            ,PasswordResetTokenRepository tokenRepository) {
+                            , PasswordResetTokenRepository tokenRepository) {
         this.userRepository = userRepository;
         this.roleRepository = roleRepository;
         this.passwordEncoder = passwordEncoder;

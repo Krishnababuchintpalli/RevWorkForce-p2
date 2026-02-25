@@ -1,4 +1,4 @@
-package com.revworkforce.auth.repository;
+package com.revworkforce.repository;
 
 
 

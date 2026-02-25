@@ -1,7 +1,8 @@
 package com.revworkforce.auth.security;
 
 import com.revworkforce.entity.User;
-import com.revworkforce.auth.repository.UserRepository;
+
+import com.revworkforce.repository.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

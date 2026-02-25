@@ -2,8 +2,9 @@ package com.revworkforce.auth.security;
 
 import com.revworkforce.entity.RoleEntity;
 import com.revworkforce.entity.RoleName;
-import com.revworkforce.auth.repository.RoleRepository;
 
+
+import com.revworkforce.repository.RoleRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
