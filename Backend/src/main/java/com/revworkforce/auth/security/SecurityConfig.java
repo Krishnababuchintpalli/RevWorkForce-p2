@@ -41,12 +41,16 @@ public class SecurityConfig {
                 )
 
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/auth/**").permitAll()
-                        .requestMatchers("/h2-console/**").permitAll()
+                        .requestMatchers(
+                                "/auth/**",
+                                "/forgot-password",
+                                "/reset-password",
+                                "/h2-console/**"
+                        ).permitAll()
                         .requestMatchers("/admin/**").hasAuthority("ADMIN")
                         .requestMatchers("/manager/**").hasAuthority("MANAGER")
                         .requestMatchers("/employee/**").hasAuthority("EMPLOYEE")
-                        .anyRequest().authenticated()
+                        .anyRequest().permitAll()
                 )
 
                 .addFilterBefore(jwtFilter,

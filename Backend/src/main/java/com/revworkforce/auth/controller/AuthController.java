@@ -8,6 +8,8 @@ import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 @RestController
 @RequestMapping("/auth")
 public class AuthController {
@@ -37,8 +39,12 @@ public class AuthController {
         return "Employee endpoint working";
     }
     @PostMapping("/forgot-password")
-    public ResponseEntity<?> forgotPassword(@RequestParam String email) {
+    public ResponseEntity<?> forgotPassword(
+            @RequestBody Map<String, String> request) {
+
+        String email = request.get("email");
         authService.forgotPassword(email);
+
         return ResponseEntity.ok("Reset link sent");
     }
 
