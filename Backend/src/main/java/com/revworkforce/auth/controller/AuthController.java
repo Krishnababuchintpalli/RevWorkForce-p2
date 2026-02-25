@@ -36,4 +36,18 @@ public class AuthController {
     public String test() {
         return "Employee endpoint working";
     }
+    @PostMapping("/forgot-password")
+    public ResponseEntity<?> forgotPassword(@RequestParam String email) {
+        authService.forgotPassword(email);
+        return ResponseEntity.ok("Reset link sent");
+    }
+
+    @PostMapping("/reset-password")
+    public ResponseEntity<?> resetPassword(
+            @RequestParam String token,
+            @RequestParam String newPassword) {
+
+        authService.resetPassword(token, newPassword);
+        return ResponseEntity.ok("Password updated");
+    }
 }

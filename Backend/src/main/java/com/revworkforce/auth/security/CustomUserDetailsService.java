@@ -1,6 +1,6 @@
 package com.revworkforce.auth.security;
 
-import com.revworkforce.auth.entity.User;
+import com.revworkforce.entity.User;
 import com.revworkforce.auth.repository.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

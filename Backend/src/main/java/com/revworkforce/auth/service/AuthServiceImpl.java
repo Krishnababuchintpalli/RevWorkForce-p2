@@ -3,9 +3,11 @@ package com.revworkforce.auth.service;
 import com.revworkforce.auth.dto.LoginRequest;
 import com.revworkforce.auth.dto.LoginResponse;
 import com.revworkforce.auth.dto.RegisterRequest;
-import com.revworkforce.auth.entity.RoleEntity;
-import com.revworkforce.auth.entity.RoleName;
-import com.revworkforce.auth.entity.User;
+import com.revworkforce.auth.entity.PasswordResetToken;
+import com.revworkforce.auth.repository.PasswordResetTokenRepository;
+import com.revworkforce.entity.RoleEntity;
+import com.revworkforce.entity.RoleName;
+import com.revworkforce.entity.User;
 import com.revworkforce.auth.repository.RoleRepository;
 import com.revworkforce.auth.repository.UserRepository;
 import com.revworkforce.auth.security.CustomUserDetailsService;
@@ -18,6 +20,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+import java.util.UUID;
+
 @Service
 public class AuthServiceImpl implements AuthService {
 
@@ -27,19 +32,22 @@ public class AuthServiceImpl implements AuthService {
     private final AuthenticationManager authenticationManager;
     private final JwtUtil jwtUtil;
     private final CustomUserDetailsService userDetailsService;
+    private final PasswordResetTokenRepository tokenRepository;
 
     public AuthServiceImpl(UserRepository userRepository,
                            RoleRepository roleRepository,
                            PasswordEncoder passwordEncoder,
                            AuthenticationManager authenticationManager,
                            JwtUtil jwtUtil,
-                           CustomUserDetailsService userDetailsService) {
+                           CustomUserDetailsService userDetailsService
+                            ,PasswordResetTokenRepository tokenRepository) {
         this.userRepository = userRepository;
         this.roleRepository = roleRepository;
         this.passwordEncoder = passwordEncoder;
         this.authenticationManager = authenticationManager;
         this.jwtUtil = jwtUtil;
         this.userDetailsService = userDetailsService;
+        this.tokenRepository=tokenRepository;
     }
 
     @Override
@@ -77,5 +85,38 @@ public class AuthServiceImpl implements AuthService {
         String token = jwtUtil.generateToken(userDetails);
 
         return new LoginResponse(token);
+    }
+    @Override
+    public void forgotPassword(String email) {
+
+        User user = userRepository.findByEmail(email)
+                .orElseThrow(() -> new RuntimeException("User not found"));
+
+        String token = UUID.randomUUID().toString();
+
+        PasswordResetToken resetToken = new PasswordResetToken();
+        resetToken.setToken(token);
+        resetToken.setUser(user);
+        resetToken.setExpiryDate(LocalDateTime.now().plusMinutes(15));
+
+        tokenRepository.save(resetToken);
+
+        System.out.println("Reset link: http://localhost:8080/reset-password?token=" + token);
+    }
+    @Override
+    public void resetPassword(String token, String newPassword) {
+
+        PasswordResetToken resetToken = tokenRepository.findByToken(token)
+                .orElseThrow(() -> new RuntimeException("Invalid token"));
+
+        if (resetToken.getExpiryDate().isBefore(LocalDateTime.now())) {
+            throw new RuntimeException("Token expired");
+        }
+
+        User user = resetToken.getUser();
+        user.setPassword(passwordEncoder.encode(newPassword));
+        userRepository.save(user);
+
+        tokenRepository.delete(resetToken);
     }
 }

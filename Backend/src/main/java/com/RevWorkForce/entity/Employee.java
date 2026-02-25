@@ -24,7 +24,7 @@ public class Employee {
 
   @ManyToOne
   @JoinColumn(name = "role_id")
-  private Role role;
+  private RoleEntity role;
 
   @ManyToOne
   @JoinColumn(name = "dept_id")

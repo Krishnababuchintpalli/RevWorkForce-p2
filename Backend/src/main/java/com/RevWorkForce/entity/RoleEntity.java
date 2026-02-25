@@ -1,4 +1,4 @@
-package com.revworkforce.auth.entity;
+package com.revworkforce.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -10,11 +10,10 @@ public class RoleEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "role_id")
+    private Long roleId;
 
     @Enumerated(EnumType.STRING)
-    @Column(unique = true)
+    @Column(name = "role_name", unique = true)
     private RoleName roleName;
-
-    // getters & setters
 }

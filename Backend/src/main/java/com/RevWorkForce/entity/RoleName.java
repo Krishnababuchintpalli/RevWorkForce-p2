@@ -1,4 +1,4 @@
-package com.revworkforce.auth.entity;
+package com.revworkforce.entity;
 
 public enum RoleName {
     ADMIN,
