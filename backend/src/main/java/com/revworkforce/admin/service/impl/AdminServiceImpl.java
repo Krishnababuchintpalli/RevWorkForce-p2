@@ -6,7 +6,12 @@ import com.revworkforce.admin.dto.EmployeeResponse;
 import com.revworkforce.admin.dto.EmployeeUpdateRequest;
 import com.revworkforce.admin.service.AdminService;
 import com.revworkforce.entity.*;
-import com.revworkforce.repository.*;
+
+import com.revworkforce.entity.Role;
+import com.revworkforce.repository.DepartmentRepository;
+import com.revworkforce.repository.DesignationRepository;
+import com.revworkforce.repository.EmployeeRepository;
+import com.revworkforce.repository.RoleRepository;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,7 +37,7 @@ public class AdminServiceImpl implements AdminService {
 
     log.info("Admin request received to create employee with email: {}", request.getEmail());
 
-    Role role = roleRepository.findById(request.getRoleId())
+    RoleEntity role = roleRepository.findById(request.getRoleId())
       .orElseThrow(() -> {
         log.error("Role not found with id: {}", request.getRoleId());
         return new RuntimeException("Role not found");
@@ -54,7 +59,7 @@ public class AdminServiceImpl implements AdminService {
 
     // Determine base series based on role
     long base;
-    String roleName = role.getRoleName();
+    String roleName = role.getRoleName().name();
     if ("ROLE_ADMIN".equals(roleName)) {
       base = 3000;
     } else if ("ROLE_MANAGER".equals(roleName)) {
@@ -93,7 +98,7 @@ public class AdminServiceImpl implements AdminService {
         emp.getEmployeeId(),
         emp.getName(),
         emp.getEmail(),
-        emp.getRole().getRoleName(),
+        emp.getRole().getRoleName().name(),
         emp.getDepartment().getDeptName(),
         emp.getDesignation().getDesigName(),
         emp.getManager() != null ? emp.getManager().getName() : null,
@@ -122,9 +127,11 @@ public class AdminServiceImpl implements AdminService {
     }
 
     if (request.getRoleId() != null) {
-      Role role = roleRepository.findById(request.getRoleId())
-        .orElseThrow(() -> new RuntimeException("Role not found"));
-      emp.setRole(role);
+      RoleEntity role = roleRepository.findById(request.getRoleId())
+        .orElseThrow(() -> {
+          log.error("Role not found with id: {}", request.getRoleId());
+          return new RuntimeException("Role not found");
+        });
     }
 
     if (request.getDeptId() != null) {
@@ -210,7 +217,7 @@ public class AdminServiceImpl implements AdminService {
       e.getEmployeeId(),
       e.getName(),
       e.getEmail(),
-      e.getRole() != null ? e.getRole().getRoleName() : null,
+      e.getRole() != null ? e.getRole().getRoleName().name() : null,
       e.getDepartment() != null ? e.getDepartment().getDeptName() : null,
       e.getDesignation() != null ? e.getDesignation().getDesigName() : null,
       e.getManager() != null ? e.getManager().getName() : null,

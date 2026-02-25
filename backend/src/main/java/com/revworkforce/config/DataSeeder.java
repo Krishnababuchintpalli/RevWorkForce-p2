@@ -1,7 +1,15 @@
 package com.revworkforce.config;
 
-import com.revworkforce.entity.*;
-import com.revworkforce.repository.*;
+
+import com.revworkforce.entity.Department;
+import com.revworkforce.entity.Designation;
+import com.revworkforce.entity.Employee;
+import com.revworkforce.entity.RoleEntity;
+import com.revworkforce.entity.RoleName;
+import com.revworkforce.repository.DepartmentRepository;
+import com.revworkforce.repository.DesignationRepository;
+import com.revworkforce.repository.EmployeeRepository;
+import com.revworkforce.repository.RoleRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
@@ -24,9 +32,17 @@ public class DataSeeder implements CommandLineRunner {
     if (roleRepository.count() == 0) {
 
       // ===== ROLES =====
-      Role empRole = roleRepository.save(new Role(1L, "ROLE_EMPLOYEE"));
-      Role mgrRole = roleRepository.save(new Role(2L, "ROLE_MANAGER"));
-      Role adminRole = roleRepository.save(new Role(3L, "ROLE_ADMIN"));
+      RoleEntity empRole = new RoleEntity();
+      empRole.setRoleName(RoleName.EMPLOYEE);
+      empRole = roleRepository.save(empRole);
+
+      RoleEntity mgrRole = new RoleEntity();
+      mgrRole.setRoleName(RoleName.MANAGER);
+      mgrRole = roleRepository.save(mgrRole);
+
+      RoleEntity adminRole = new RoleEntity();
+      adminRole.setRoleName(RoleName.ADMIN);
+      adminRole = roleRepository.save(adminRole);
 
       // ===== DEPARTMENTS =====
       Department it = departmentRepository.save(new Department(10L, "IT"));

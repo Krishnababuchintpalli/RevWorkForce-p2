@@ -8,12 +8,11 @@ import lombok.Data;
 @Data
 public class RoleEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "role_id")
-    private Long roleId;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long roleId;   // will auto-map to role_id
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "role_name", unique = true)
-    private RoleName roleName;
+  @Enumerated(EnumType.STRING)
+  @Column(unique = true)
+  private RoleName roleName;
 }

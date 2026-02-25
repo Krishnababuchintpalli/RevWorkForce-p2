@@ -8,6 +8,7 @@ import lombok.*;
 @Entity
 @Table(name = "roles")
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor
+@Data
 public class Role {
 
   @Id
