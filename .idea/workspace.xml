@@ -56,7 +56,11 @@
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.RevWorkforceApplication.executor": "Run",
+<<<<<<< HEAD
     "git-widget-placeholder": "feature/foundation-setup",
+=======
+    "git-widget-placeholder": "feature/admin-modules",
+>>>>>>> feature/admin-modules
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/New folder (3)/java/revworkforce/backend/src/main/java/com/revworkforce/report",
     "onboarding.tips.debug.path": "D:/New folder (3)/java/revWorkForce/src/main/java/com/demo/Main.java",
