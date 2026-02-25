@@ -6,44 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a75fec46-1077-4e35-9bc0-c798ce2cb01f" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/../../calculator.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/admin/controller/DepartmentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/admin/controller/DesignationController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/admin/controller/HolidayController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/admin/controller/NotificationController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/admin/controller/ReportingController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/admin/dto/AssignManagerRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/admin/dto/CreateDepartmentRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/admin/dto/CreateDesignationRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/admin/dto/DashboardSummaryResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/admin/dto/DepartmentEmployeeCountResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/admin/dto/DepartmentResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/admin/dto/DesignationResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/admin/dto/EmployeeResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/admin/dto/EmployeeStatusUpdateRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/admin/dto/EmployeeUpdateRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/admin/dto/HolidayCreateRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/admin/dto/HolidayResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/admin/dto/NotificationBroadcastRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/admin/dto/NotificationCreateRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/admin/dto/NotificationResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/admin/service/DepartmentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/admin/service/DesignationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/admin/service/HolidayService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/admin/service/NotificationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/admin/service/ReportingService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/admin/service/impl/AdminServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/admin/service/impl/DepartmentServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/admin/service/impl/DesignationServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/admin/service/impl/HolidayServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/admin/service/impl/NotificationServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/admin/service/impl/ReportingServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/entity/Holiday.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/entity/Notification.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/exception/ErrorResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/exception/ResourceNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/repository/HolidayRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/repository/NotificationRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/security/CustomUserDetailsService.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../log-analyzer.sh" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../my-project" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../sample-log.txt" afterDir="false" />
@@ -52,18 +14,6 @@
       <change afterPath="$PROJECT_DIR$/../../springboot/RevWorkForce-Springboot/src/main/java/com/revworkforce/controller/EmployeeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../angular.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/RevWorkforceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/RevWorkforceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/admin/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/admin/controller/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/admin/service/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/admin/service/AdminService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/admin/service/AdminServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/config/DataSeeder.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/config/DataSeeder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/security/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/entity/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/entity/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/repository/DepartmentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/repository/DepartmentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/repository/DesignationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/repository/DesignationRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/repository/EmployeeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/revworkforce/repository/EmployeeRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../package-lock.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../package.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../tsconfig.app.json" beforeDir="false" />
@@ -106,7 +56,11 @@
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.RevWorkforceApplication.executor": "Run",
-    "git-widget-placeholder": "feature/admin-create-employee",
+<<<<<<< HEAD
+    "git-widget-placeholder": "feature/foundation-setup",
+=======
+    "git-widget-placeholder": "feature/admin-modules",
+>>>>>>> feature/admin-modules
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/New folder (3)/java/revworkforce/backend/src/main/java/com/revworkforce/report",
     "onboarding.tips.debug.path": "D:/New folder (3)/java/revWorkForce/src/main/java/com/demo/Main.java",

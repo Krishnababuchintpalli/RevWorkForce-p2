@@ -1,0 +1,53 @@
+<!-- Full-page container for login screen -->
+<div class="login-container">
+
+  <!-- White login card -->
+  <div class="login-card">
+
+    <!-- Logo & Application Title -->
+    <div class="logo-section">
+      <img src="assets/logo.png" alt="App Logo">
+      <h2>RevWorkForce</h2>
+      <!--<p>Employee Login</p>-->
+    </div>
+
+    <!-- Reactive Form Binding -->
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+
+      <!-- Username / Email Field -->
+      <div class="form-group">
+        <label>Username / Email</label>
+        <input type="text" formControlName="username">
+
+        <!-- Validation Error -->
+        <small *ngIf="submitted && f['username'].errors" class="error">
+          Username is required
+        </small>
+      </div>
+
+      <!-- Password Field -->
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" formControlName="password">
+
+        <!-- Required Validation -->
+        <small *ngIf="submitted && f['password'].errors?.['required']" class="error">
+          Password is required
+        </small>
+
+        <!-- Min Length Validation -->
+        <small *ngIf="submitted && f['password'].errors?.['minlength']" class="error">
+          Minimum 4 characters required
+        </small>
+      </div>
+
+      <!-- Login Button -->
+      <button type="submit">Login</button>
+
+      <!-- Optional Forgot Password -->
+      <a class="forgot-link">Forgot Password?</a>
+
+    </form>
+
+  </div>
+</div>
