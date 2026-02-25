@@ -10,10 +10,10 @@
       <change afterPath="$PROJECT_DIR$/../../my-project" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../sample-log.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../spring-microservices-demo/notification-service/src/main/java/com/demo/notificationservice/NotificationServiceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-microservices-demo/spring-microservices-demo.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../springboot/RevWorkForce-Springboot/src/main/java/com/revworkforce/controller/EmployeeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../angular.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../package-lock.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../package.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../tsconfig.app.json" beforeDir="false" />
@@ -49,20 +49,32 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Maven. [clean,install].executor": "Run",
+    "Maven.revWorkForce [clean,install].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.RevWorkforceApplication.executor": "Run",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "feature/foundation-setup",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/New folder (3)/java/revworkforce/backend/src/main/java/com/revworkforce/report",
     "onboarding.tips.debug.path": "D:/New folder (3)/java/revWorkForce/src/main/java/com/demo/Main.java",
     "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "build.tools"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\New folder (3)\java\revworkforce\backend\src\main\java\com\revworkforce\report" />
+      <recent name="D:\New folder (3)\java\revworkforce\backend\src\main\java\com\revworkforce\performance" />
+      <recent name="D:\New folder (3)\java\revworkforce\backend\src\main\java\com\revworkforce\notification" />
+      <recent name="D:\New folder (3)\java\revworkforce\backend\src\main\java\com\revworkforce\leave" />
+      <recent name="D:\New folder (3)\java\revworkforce\backend\src\main\java\com\revworkforce\employee" />
+    </key>
+  </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="mvn clean install" />
