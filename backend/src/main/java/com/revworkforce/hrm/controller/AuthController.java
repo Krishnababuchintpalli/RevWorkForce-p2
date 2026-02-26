@@ -17,11 +17,13 @@ public class AuthController {
     private final AuthService authService;
 
     public AuthController(AuthService authService) {
+
         this.authService = authService;
     }
 
     @PostMapping("/login")
     public AuthResponse login(@Valid @RequestBody LoginRequest request) {
+
         return authService.login(request);
     }
 

@@ -4,7 +4,6 @@ import com.revworkforce.hrm.dto.AuthResponse;
 import com.revworkforce.hrm.dto.LoginRequest;
 import com.revworkforce.hrm.dto.PasswordResetRequest;
 import com.revworkforce.hrm.entity.User;
-import com.revworkforce.hrm.exception.UnauthorizedException;
 import com.revworkforce.hrm.repository.UserRepository;
 import com.revworkforce.hrm.security.JwtUtil;
 import org.springframework.security.authentication.AuthenticationManager;
