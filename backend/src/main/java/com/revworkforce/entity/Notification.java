@@ -14,7 +14,7 @@ import lombok.*;
 public class Notification {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
+//  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
   @ManyToOne

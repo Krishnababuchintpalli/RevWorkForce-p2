@@ -71,7 +71,7 @@ public class AdminServiceImpl implements AdminService {
     // Generate next ID within that series
     long count = employeeRepository.count();
     long nextId = base + count + 1;
-    emp.setEmployeeId(nextId);
+
 
     emp.setName(request.getName());
     emp.setEmail(request.getEmail());

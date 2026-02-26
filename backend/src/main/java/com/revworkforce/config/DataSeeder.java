@@ -29,7 +29,7 @@ public class DataSeeder implements CommandLineRunner {
   public void run(String... args) {
 
     // Seed only if empty (safe for multiple runs)
-    if (roleRepository.count() == 0) {
+    if (departmentRepository.count() == 0) {
 
       // ===== ROLES =====
       RoleEntity empRole = new RoleEntity();
