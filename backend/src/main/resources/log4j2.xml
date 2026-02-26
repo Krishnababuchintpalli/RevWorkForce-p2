@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+  <Appenders>
+    <Console name="Console" target="SYSTEM_OUT">
+      <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5level [req:%X{requestId}] [%t] [%c{1}] %msg%n"/>
+    </Console>
+    <RollingFile name="FileAppender"
+                 fileName="logs/revworkforce.log"
+                 filePattern="logs/revworkforce-%d{yyyy-MM-dd}-%i.log.gz">
+      <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [req:%X{requestId}] [%t] [%c{1}] %msg%n"/>
+      <Policies>
+        <SizeBasedTriggeringPolicy size="10 MB"/>
+        <TimeBasedTriggeringPolicy interval="1"/>
+      </Policies>
+      <DefaultRolloverStrategy max="14"/>
+    </RollingFile>
+  </Appenders>
+  <Loggers>
+    <Root level="info">
+      <AppenderRef ref="Console"/>
+      <AppenderRef ref="FileAppender"/>
+    </Root>
+    <Logger name="com.revworkforce.hrm.logging" level="debug" additivity="false">
+      <AppenderRef ref="Console"/>
+      <AppenderRef ref="FileAppender"/>
+    </Logger>
+    <Logger name="com.revworkforce.hrm.controller" level="info" additivity="false">
+      <AppenderRef ref="Console"/>
+      <AppenderRef ref="FileAppender"/>
+    </Logger>
+    <Logger name="com.revworkforce.hrm.service" level="debug" additivity="false">
+      <AppenderRef ref="Console"/>
+      <AppenderRef ref="FileAppender"/>
+    </Logger>
+    <Logger name="com.revworkforce.hrm.repository" level="warn" additivity="false">
+      <AppenderRef ref="Console"/>
+      <AppenderRef ref="FileAppender"/>
+    </Logger>
+    <Logger name="org.springframework.security" level="info" additivity="false">
+      <AppenderRef ref="Console"/>
+      <AppenderRef ref="FileAppender"/>
+    </Logger>
+  </Loggers>
+</Configuration>
