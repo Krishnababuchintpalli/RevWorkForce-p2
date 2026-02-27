@@ -11,16 +11,37 @@ import { ApiService } from '../services/api.service';
         <h6>Add Employee</h6>
         <form class="rwf-form" [formGroup]="empForm" (ngSubmit)="saveEmployee()">
           <input class="form-control mb-2" formControlName="employeeId" placeholder="Employee ID">
+          <div class="text-danger small mb-2" *ngIf="isInvalid('employeeId')">
+            <span *ngIf="empForm.get('employeeId')?.errors?.['required']">Employee ID is required.</span>
+            <span *ngIf="empForm.get('employeeId')?.errors?.['pattern']">Employee ID must contain only numbers.</span>
+          </div>
+
           <input class="form-control mb-2" formControlName="fullName" placeholder="Full Name">
+          <div class="text-danger small mb-2" *ngIf="isInvalid('fullName')">
+            <span *ngIf="empForm.get('fullName')?.errors?.['required']">Full name is required.</span>
+            <span *ngIf="empForm.get('fullName')?.errors?.['pattern']">Name must contain letters and spaces only.</span>
+          </div>
+
           <input class="form-control mb-2" formControlName="email" placeholder="Email">
+          <div class="text-danger small mb-2" *ngIf="isInvalid('email')">
+            <span *ngIf="empForm.get('email')?.errors?.['required']">Email is required.</span>
+            <span *ngIf="empForm.get('email')?.errors?.['email']">Enter a valid email format.</span>
+          </div>
+
           <input type="password" class="form-control mb-2" formControlName="password" placeholder="Password">
+          <div class="text-danger small mb-2" *ngIf="isInvalid('password')">
+            <span *ngIf="empForm.get('password')?.errors?.['required']">Password is required.</span>
+            <span *ngIf="empForm.get('password')?.errors?.['minlength']">Password must be at least 8 characters.</span>
+            <span *ngIf="empForm.get('password')?.errors?.['pattern']">Password must contain uppercase, lowercase, number, and special character.</span>
+          </div>
+
           <select class="form-select mb-2" formControlName="role">
             <option value="EMPLOYEE">Employee</option>
             <option value="MANAGER">Manager</option>
             <option value="ADMIN">Admin</option>
           </select>
           <div class="text-danger small mb-2" *ngIf="createEmpError">{{ createEmpError }}</div>
-          <button class="btn btn-sm btn-primary w-100">Create Employee</button>
+          <button type="submit" class="btn btn-sm btn-primary w-100">Create Employee</button>
         </form>
       </div>
 
@@ -28,6 +49,7 @@ import { ApiService } from '../services/api.service';
         <h6>Add Department</h6>
         <form class="rwf-form" [formGroup]="depForm" (ngSubmit)="saveDepartment()">
           <input class="form-control mb-2" formControlName="name">
+          <div class="text-danger small mb-2" *ngIf="depError">{{ depError }}</div>
           <button class="btn btn-sm btn-primary">Save</button>
         </form>
       </div>
@@ -35,6 +57,7 @@ import { ApiService } from '../services/api.service';
         <h6>Add Designation</h6>
         <form class="rwf-form" [formGroup]="desForm" (ngSubmit)="saveDesignation()">
           <input class="form-control mb-2" formControlName="name">
+          <div class="text-danger small mb-2" *ngIf="desError">{{ desError }}</div>
           <button class="btn btn-sm btn-primary">Save</button>
         </form>
       </div>
@@ -120,8 +143,11 @@ export class AdminComponent implements OnInit {
   announcements: any[] = [];
   teamLeaves: any[] = [];
   createEmpError = '';
+  depError = '';
+  desError = '';
   leaveError = '';
   leaveComments: { [key: number]: string } = {};
+  empSubmitted = false;
 
   empForm: FormGroup;
   depForm: FormGroup;
@@ -130,10 +156,14 @@ export class AdminComponent implements OnInit {
 
   constructor(private api: ApiService, private fb: FormBuilder) {
     this.empForm = this.fb.group({
-      employeeId: ['', Validators.required],
-      fullName: ['', Validators.required],
+      employeeId: ['', [Validators.required, Validators.pattern('^[0-9]+$')]],
+      fullName: ['', [Validators.required, Validators.pattern('^[A-Za-z ]+$')]],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(8)]],
+      password: ['', [
+        Validators.required,
+        Validators.minLength(8),
+        Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[^A-Za-z0-9]).{8,}$')
+      ]],
       role: ['EMPLOYEE', Validators.required]
     });
     this.depForm = this.fb.group({ name: ['', Validators.required] });
@@ -155,10 +185,33 @@ export class AdminComponent implements OnInit {
   }
 
   saveEmployee(): void {
-    if (this.empForm.invalid) return;
+    this.empSubmitted = true;
+    this.createEmpError = '';
+    if (this.empForm.invalid) {
+      this.empForm.markAllAsTouched();
+      this.createEmpError = 'Please correct validation errors before creating employee.';
+      return;
+    }
+
+    const employeeId = (this.empForm.value.employeeId || '').toString().trim();
+    const email = (this.empForm.value.email || '').toString().trim().toLowerCase();
+
+    const duplicateEmployeeId = this.users.some(u => (u.employeeId || '').toString().trim() === employeeId);
+    if (duplicateEmployeeId) {
+      this.createEmpError = 'Employee ID already exists.';
+      return;
+    }
+
+    const duplicateEmail = this.users.some(u => (u.email || '').toString().trim().toLowerCase() === email);
+    if (duplicateEmail) {
+      this.createEmpError = 'Email already exists.';
+      return;
+    }
+
     this.api.post('/users', this.empForm.value).subscribe({
       next: () => {
         this.createEmpError = '';
+        this.empSubmitted = false;
         this.empForm.reset({ role: 'EMPLOYEE' });
         this.load();
       },
@@ -176,17 +229,44 @@ export class AdminComponent implements OnInit {
     });
   }
 
+  isInvalid(controlName: string): boolean {
+    const control = this.empForm.get(controlName);
+    return !!(control && control.invalid && (this.empSubmitted || control.touched || control.dirty));
+  }
+
   setActive(id: number, active: boolean): void {
     this.api.patch(`/users/${id}/active?active=${active}`, {}).subscribe(() => this.load());
   }
 
   saveDepartment(): void {
-    if (this.depForm.invalid) return;
+    this.depError = '';
+    if (this.depForm.invalid) {
+      this.depForm.markAllAsTouched();
+      this.depError = 'Department name is required.';
+      return;
+    }
+    const name = (this.depForm.value.name || '').toString().trim().toLowerCase();
+    const exists = this.departments.some(d => (d.name || '').toString().trim().toLowerCase() === name);
+    if (exists) {
+      this.depError = 'Department already exists.';
+      return;
+    }
     this.api.post('/admin/departments', this.depForm.value).subscribe(() => { this.depForm.reset(); this.load(); });
   }
 
   saveDesignation(): void {
-    if (this.desForm.invalid) return;
+    this.desError = '';
+    if (this.desForm.invalid) {
+      this.desForm.markAllAsTouched();
+      this.desError = 'Designation name is required.';
+      return;
+    }
+    const name = (this.desForm.value.name || '').toString().trim().toLowerCase();
+    const exists = this.designations.some(d => (d.name || '').toString().trim().toLowerCase() === name);
+    if (exists) {
+      this.desError = 'Designation already exists.';
+      return;
+    }
     this.api.post('/admin/designations', this.desForm.value).subscribe(() => { this.desForm.reset(); this.load(); });
   }
 
