@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -44,6 +45,22 @@ public class GlobalExceptionHandler {
     public ResponseEntity<Map<String, String>> handleIllegalArgument(IllegalArgumentException ex, HttpServletRequest request) {
         log.warn("Illegal argument path={} message={}", request.getRequestURI(), ex.getMessage());
         return ResponseEntity.badRequest().body(Map.of("error", ex.getMessage()));
+    }
+
+    @ExceptionHandler(DataIntegrityViolationException.class)
+    public ResponseEntity<Map<String, String>> handleDataIntegrity(DataIntegrityViolationException ex, HttpServletRequest request) {
+        String message = ex.getMostSpecificCause() != null ? ex.getMostSpecificCause().getMessage() : ex.getMessage();
+        String normalized = message == null ? "Duplicate or invalid data." : message.toLowerCase();
+
+        String userMessage = "Duplicate or invalid data.";
+        if (normalized.contains("departments") && normalized.contains("duplicate")) {
+            userMessage = "Department already exists.";
+        } else if (normalized.contains("designations") && normalized.contains("duplicate")) {
+            userMessage = "Designation already exists.";
+        }
+
+        log.warn("Data integrity violation path={} message={}", request.getRequestURI(), message);
+        return ResponseEntity.badRequest().body(Map.of("error", userMessage));
     }
 
     @ExceptionHandler(Exception.class)

@@ -50,7 +50,9 @@ import { ApiService } from '../services/api.service';
         <form class="rwf-form" [formGroup]="depForm" (ngSubmit)="saveDepartment()">
           <input class="form-control mb-2" formControlName="name">
           <div class="text-danger small mb-2" *ngIf="depError">{{ depError }}</div>
-          <button class="btn btn-sm btn-primary">Save</button>
+          <button class="btn btn-sm btn-primary" [disabled]="savingDepartment">
+            {{ savingDepartment ? 'Saving...' : 'Save' }}
+          </button>
         </form>
       </div>
       <div class="card p-3 mb-3">
@@ -58,7 +60,9 @@ import { ApiService } from '../services/api.service';
         <form class="rwf-form" [formGroup]="desForm" (ngSubmit)="saveDesignation()">
           <input class="form-control mb-2" formControlName="name">
           <div class="text-danger small mb-2" *ngIf="desError">{{ desError }}</div>
-          <button class="btn btn-sm btn-primary">Save</button>
+          <button class="btn btn-sm btn-primary" [disabled]="savingDesignation">
+            {{ savingDesignation ? 'Saving...' : 'Save' }}
+          </button>
         </form>
       </div>
       <div class="card p-3">
@@ -146,6 +150,8 @@ export class AdminComponent implements OnInit {
   depError = '';
   desError = '';
   leaveError = '';
+  savingDepartment = false;
+  savingDesignation = false;
   leaveComments: { [key: number]: string } = {};
   empSubmitted = false;
 
@@ -245,13 +251,26 @@ export class AdminComponent implements OnInit {
       this.depError = 'Department name is required.';
       return;
     }
-    const name = (this.depForm.value.name || '').toString().trim().toLowerCase();
+    const normalizedName = (this.depForm.value.name || '').toString().trim();
+    const name = normalizedName.toLowerCase();
     const exists = this.departments.some(d => (d.name || '').toString().trim().toLowerCase() === name);
     if (exists) {
       this.depError = 'Department already exists.';
       return;
     }
-    this.api.post('/admin/departments', this.depForm.value).subscribe(() => { this.depForm.reset(); this.load(); });
+    this.savingDepartment = true;
+    this.api.post('/admin/departments', { name: normalizedName }).subscribe({
+      next: () => {
+        this.depError = '';
+        this.depForm.reset();
+        this.savingDepartment = false;
+        this.load();
+      },
+      error: (err) => {
+        this.depError = err?.error?.error || err?.error?.message || 'Unable to save department.';
+        this.savingDepartment = false;
+      }
+    });
   }
 
   saveDesignation(): void {
@@ -261,13 +280,26 @@ export class AdminComponent implements OnInit {
       this.desError = 'Designation name is required.';
       return;
     }
-    const name = (this.desForm.value.name || '').toString().trim().toLowerCase();
+    const normalizedName = (this.desForm.value.name || '').toString().trim();
+    const name = normalizedName.toLowerCase();
     const exists = this.designations.some(d => (d.name || '').toString().trim().toLowerCase() === name);
     if (exists) {
       this.desError = 'Designation already exists.';
       return;
     }
-    this.api.post('/admin/designations', this.desForm.value).subscribe(() => { this.desForm.reset(); this.load(); });
+    this.savingDesignation = true;
+    this.api.post('/admin/designations', { name: normalizedName }).subscribe({
+      next: () => {
+        this.desError = '';
+        this.desForm.reset();
+        this.savingDesignation = false;
+        this.load();
+      },
+      error: (err) => {
+        this.desError = err?.error?.error || err?.error?.message || 'Unable to save designation.';
+        this.savingDesignation = false;
+      }
+    });
   }
 
   saveAnnouncement(): void {

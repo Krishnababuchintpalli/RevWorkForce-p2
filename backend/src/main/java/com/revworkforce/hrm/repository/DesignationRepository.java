@@ -7,4 +7,6 @@ import java.util.Optional;
 
 public interface DesignationRepository extends JpaRepository<Designation, Long> {
     Optional<Designation> findByName(String name);
+    Optional<Designation> findByNameIgnoreCase(String name);
+    Optional<Designation> findTopByOrderByIdDesc();
 }

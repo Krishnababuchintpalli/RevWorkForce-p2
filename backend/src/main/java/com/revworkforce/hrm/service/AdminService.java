@@ -18,6 +18,8 @@ public class AdminService {
     private final AnnouncementRepository announcementRepository;
     private final UserRepository userRepository;
     private final NotificationService notificationService;
+    private final Object departmentLock = new Object();
+    private final Object designationLock = new Object();
 
     public AdminService(DepartmentRepository departmentRepository,
                         DesignationRepository designationRepository,
@@ -39,10 +41,44 @@ public class AdminService {
     public List<Announcement> announcements() { return announcementRepository.findAll(); }
 
     @Transactional
-    public Department saveDepartment(Department d) { return departmentRepository.save(d); }
+    public Department saveDepartment(Department d) {
+        d.setName(normalizeName(d.getName()));
+        if (d.getName() == null || d.getName().isEmpty()) {
+            throw new IllegalArgumentException("Department name is required.");
+        }
+
+        Department duplicate = departmentRepository.findByNameIgnoreCase(d.getName()).orElse(null);
+        if (duplicate != null && (d.getId() == null || !duplicate.getId().equals(d.getId()))) {
+            throw new IllegalArgumentException("Department already exists.");
+        }
+
+        synchronized (departmentLock) {
+            if (d.getId() == null) {
+                d.setId(nextDepartmentId());
+            }
+            return departmentRepository.save(d);
+        }
+    }
 
     @Transactional
-    public Designation saveDesignation(Designation d) { return designationRepository.save(d); }
+    public Designation saveDesignation(Designation d) {
+        d.setName(normalizeName(d.getName()));
+        if (d.getName() == null || d.getName().isEmpty()) {
+            throw new IllegalArgumentException("Designation name is required.");
+        }
+
+        Designation duplicate = designationRepository.findByNameIgnoreCase(d.getName()).orElse(null);
+        if (duplicate != null && (d.getId() == null || !duplicate.getId().equals(d.getId()))) {
+            throw new IllegalArgumentException("Designation already exists.");
+        }
+
+        synchronized (designationLock) {
+            if (d.getId() == null) {
+                d.setId(nextDesignationId());
+            }
+            return designationRepository.save(d);
+        }
+    }
 
     @Transactional
     public Holiday saveHoliday(Holiday h) { return holidayRepository.save(h); }
@@ -82,5 +118,30 @@ public class AdminService {
     public void deleteAnnouncement(Long id) {
         if (!announcementRepository.existsById(id)) throw new ResourceNotFoundException("Announcement not found");
         announcementRepository.deleteById(id);
+    }
+
+    private String normalizeName(String value) {
+        if (value == null) return null;
+        return value.trim();
+    }
+
+    private Long nextDepartmentId() {
+        Long candidate = departmentRepository.findTopByOrderByIdDesc()
+                .map(existing -> existing.getId() + 10L)
+                .orElse(10L);
+        while (departmentRepository.existsById(candidate)) {
+            candidate += 10L;
+        }
+        return candidate;
+    }
+
+    private Long nextDesignationId() {
+        Long candidate = designationRepository.findTopByOrderByIdDesc()
+                .map(existing -> existing.getId() + 100L)
+                .orElse(100L);
+        while (designationRepository.existsById(candidate)) {
+            candidate += 100L;
+        }
+        return candidate;
     }
 }
